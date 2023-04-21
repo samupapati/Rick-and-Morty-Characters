@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@font-face {
+    font-family: 'Rick and Morty';
+    src: url('./assets/fonts/get_schwifty.ttf');
+}
+$stats-1: #FCE46D;
+$stats-2: #A1140A;
+$stats-3: #C0DF40;
+$stats-4: #c78eda;
+$font-color: #40B5CB;
+$bg: #252525;
+$bg-cards: #313030;
+
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin theme($background){
+    background-color: $background;
+    color: $bg-details;
+    border: 5px solid $bg-details;
+}
+
+@mixin flex($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin measurements($width, $height){
+    width: $width;
+    height: $height;
+}
+
+.container{
+    @include flex(row, center, center);
+}
+
+#app{
+    flex-direction: column;
+    background-color: $bg
+}
+
+#navbar{
+    @include measurements(100%, 50px);
+    justify-content: space-between;
+    padding: 0 64px;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: $bg;
+    box-shadow: 0px 0px 5px 4px $bg;
+
+    #logo{
+        @include measurements(45px, auto);
+        z-index: 2;
+    }
+
+    #menu{
+        @include flex(row, space-between, center);
+        @include measurements(350px, inherit);
+        list-style-type: none;
+        
+        .menu-item-link{
+            color: #fff;
+            font-family: 'Creepster';
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: .5s;
+        }
+        .menu-item-link:hover{
+            text-shadow: $stats-3 5px 5px 5px;
+        }
+    }
+}
+
+#home{
+    @include measurements(100vw, calc(100vh - 50px));
+    @include flex(row, start, center);
+    background-image: url('./assets/imgs/background.webp');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    #description{
+        @include measurements(40%, 100%);
+        @include flex(column, center, center);
+        font-family: 'Creepster';
+
+        h1{
+            font-size: 4em;
+            color: #65EF38;
+            text-shadow: #a0ee85 1px 1px 5px;
+        }
+        p{
+            font-size: 1.5em;
+            color: gray;
+        }
+    }
+}
+
+.content{
+    @include measurements(100%, auto);
+    padding: 64px;
+    background-color: $bg;
+
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    place-items: center;
+    grid-gap: 32px;
+}
+
+.card{
+    @include measurements(100%, auto);
+    @include flex(column, space-between, start);
+    background-color: $bg-cards;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 0px #00000054;
+    transition: 1s;
+
+    img{
+        @include measurements(100%, auto);
+    }
+
+    .card-info{
+        padding: 16px;
+        font-family: 'Creepster';
+
+        h2{
+            font-size: 1.5em;
+            color: $font-color;
+        }
+        p{
+            font-size: 1em;
+            color: $stats-4;
+        }
+        .origin{
+            color: $stats-1;
+        }
+    }
+}
+.card:hover{
+    transform: scale(110%);
+    z-index: 2;
+    transition: .5s;
+}
+
+.btn-pass{
+    @include measurements(50px, 50px);
+    position: fixed;
+    top: 0; bottom: 0;
+    margin: auto 0; 
+    background-color: transparent;
+    border: none;
+
+    .btn-pass-icon{
+        color: #fff;
+        cursor: pointer;
+        font-size: 32px;
+        transition: 1s;
+    }
+    .btn-pass-icon:hover{
+        transform: scale(120%);
+        transition: .5s;
+    }
+}
+#btn-pass-left{
+    left: 15px;
+}
+#btn-pass-right{
+    right: 15px;
+}
+
+@keyframes animar-personagens {
+    0%{
+        left: -40%;
+    }
+    100%{
+        left: 110%;
+    }
+}
+
+@media all and (max-width: 1100px){
+    .content{
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media all and (max-width: 800px){
+    .content{
+        grid-template-columns: repeat(1, auto);
+    }
+}
