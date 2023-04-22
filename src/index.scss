@@ -35,6 +35,10 @@ $bg-cards: #313030;
     height: $height;
 }
 
+body{
+    overflow-x: hidden
+}
+
 .container{
     @include flex(row, center, center);
 }
@@ -57,6 +61,7 @@ $bg-cards: #313030;
     #logo{
         @include measurements(45px, auto);
         z-index: 2;
+        cursor: pointer;
     }
 
     #menu{
@@ -64,14 +69,14 @@ $bg-cards: #313030;
         @include measurements(350px, inherit);
         list-style-type: none;
         
-        .menu-item-link{
+        .menu-item{
             color: #fff;
             font-family: 'Creepster';
             font-size: 1.2em;
             cursor: pointer;
             transition: .5s;
         }
-        .menu-item-link:hover{
+        .menu-item:hover{
             text-shadow: $stats-3 5px 5px 5px;
         }
     }
@@ -89,6 +94,7 @@ $bg-cards: #313030;
         @include measurements(40%, 100%);
         @include flex(column, center, center);
         font-family: 'Creepster';
+        text-align: center;
 
         h1{
             font-size: 4em;
@@ -108,7 +114,7 @@ $bg-cards: #313030;
     background-color: $bg;
 
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, calc(80%/3));
     place-items: center;
     grid-gap: 32px;
 }
@@ -184,14 +190,47 @@ $bg-cards: #313030;
     }
 }
 
-@media all and (max-width: 1100px){
+@media all and (max-width: 800px){
+    #home{
+        @include flex(row, start, start);
+    }
+    #description{
+        @include measurements(100% !important, 40% !important);
+    }
     .content{
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: repeat(2, calc(80%/2));
     }
 }
 
-@media all and (max-width: 800px){
+@media all and (max-width: 550px){
+    #menu-btn{
+        @include measurements(40px, 40px);
+        background-image: url('./assets/imgs/menuicon.png');
+        background-size: cover;
+        position: absolute;
+        right: 64px;
+        cursor: pointer
+    }
+    .menu-item{
+        @include measurements(100% !important, 100% !important);
+        position: absolute;
+        text-align: center;
+        top: 100px;
+        left: 0;
+        background-color: $bg-cards;
+        padding-top: 13px;
+    }
+    .menu-item:first-child{
+        top: 50px;
+    }
+    .menu-item:last-child{
+        top: 150px;
+    }
+    .hide{
+        display: none !important;
+    }
+    
     .content{
-        grid-template-columns: repeat(1, auto);
+        grid-template-columns: 80%;
     }
 }
