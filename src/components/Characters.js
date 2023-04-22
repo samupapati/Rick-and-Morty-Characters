@@ -1,19 +1,19 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Card from './Card'
 import Buttons from './Buttons';
 
 function Characters(){
-    let [counter, setCounter] = useState(1)
-    let [linkAPI, setLinkAPI] = useState('https://rickandmortyapi.com/api/character/?page=' + counter);
+    let link = 'https://rickandmortyapi.com/api/character/?page='
+    const [counter, setCounter] = useState(1)
     const [info, setInfo] = useState([]);
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        getData();
+        getData(link + counter);
     }, [])
 
-    async function getData(){
-        let response = await fetch(linkAPI);
+    async function getData(link){
+        let response = await fetch(link);
         let result = await response.json();
         setInfo(result.info)
         setData(result.results)
@@ -21,16 +21,20 @@ function Characters(){
 
     function handlePage(direction){
         if(direction === 'left'){
-            setCounter((counter - 1))
+            getData(link + (counter - 1))
+            setCounter(counter - 1)
+            window.scrollTo(0, 0)
+        }else{
+            getData(link + (counter + 1))
+            setCounter(counter + 1)
+            window.scrollTo(0, 0)
         }
-        setCounter(counter + 1)
     }
 
     return(
         <div className="container content" id="characters">
-            {counter}
             <Card data={data}/>
-            <Buttons handlePage={handlePage}/>
+            <Buttons handlePage={handlePage} counter={counter} nPages={info.pages}/>
         </div>
     )
 }

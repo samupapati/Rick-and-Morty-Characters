@@ -13,13 +13,13 @@ function Card({data}){
         {data.map(item => {
             return (
                 <div className="card">
-                <img src={item.image}/>
-                <div className="card-info">
-                    <h2>{item.name}</h2>
-                    {handleColor(item.status)}
-                    <p>{item.species}</p>
-                    <p className="origin">{item.origin.name}</p>
-                </div>
+                    <img src={item.image}/>
+                    <div className="card-info">
+                        <h2>{item.name}</h2>
+                        {handleColor(item.status)}
+                        <p>{item.species}</p>
+                        <p className="origin">{item.origin.name}</p>
+                    </div>
             </div>
             )
         })}
