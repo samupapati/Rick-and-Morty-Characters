@@ -110,6 +110,7 @@ body{
 
 .content{
     @include measurements(100%, auto);
+    min-height: calc(100vh - 50px);
     padding: 64px;
     background-color: $bg;
 
@@ -142,10 +143,10 @@ body{
         }
         p{
             font-size: 1em;
-            color: $stats-4;
+            color: #fff7c9;
         }
-        .origin{
-            color: $stats-1;
+        span{
+            color: gray;
         }
     }
 }
@@ -179,6 +180,56 @@ body{
 }
 #btn-pass-right{
     right: 15px;
+}
+
+#not-found{
+    @include measurements(100%, auto);
+    @include flex(column, center, center);
+    grid-column: 1 / span 3;
+
+    #not-found-img{
+        width: 30%;
+    }
+    #not-found-description{
+        font-size: 150%;
+        font-family: 'Creepster';
+        color: gray
+    }
+}
+
+#show-modal-btn{
+    @include measurements(50px, 50px);
+    border-radius: 50%;
+    border: none;
+    position: fixed;
+    z-index: 4;
+    left: 0; right: 0; margin: auto;
+    bottom: 10px;
+    border: 5px solid white;
+    background-color: $bg-cards;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px #00000054;
+    transition: 1s;
+
+}
+
+#show-modal-btn:hover{
+    transform: scale(110%);
+    transition: .5s
+}
+
+#modal-filter{
+    @include measurements(100%, 200px);
+    @include flex(column, start, center);
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+    background-color: $bg;
+    box-shadow: 0px 0px 10px 0px #00000054;
+    padding-top: 20px;
+
 }
 
 @keyframes animar-personagens {
