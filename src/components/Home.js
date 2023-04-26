@@ -1,7 +1,4 @@
-import logo from '../assets/imgs/logo.png'
-
 function Home(){
-    console.log('renderizei')
     return(
         <div className="container" id="home">
             <div id='description'>
