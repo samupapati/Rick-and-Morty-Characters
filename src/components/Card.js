@@ -1,4 +1,4 @@
-function Card({data, componentName}){
+function Card({data}){
     function handleColorStatus(text){
         if(text === 'Alive'){
             return (<p style={{color: '#C0DF40'}}><span>status:</span> {text}</p>)
