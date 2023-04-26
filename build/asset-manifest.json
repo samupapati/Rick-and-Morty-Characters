@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6ba58c6b.css",
+    "main.js": "/static/js/main.700c4773.js",
+    "static/js/787.40f4cb11.chunk.js": "/static/js/787.40f4cb11.chunk.js",
+    "static/media/rick-sad.jpg": "/static/media/rick-sad.b7b2c05feed66c017339.jpg",
+    "static/media/background.webp": "/static/media/background.77b388a323faf560168e.webp",
+    "index.html": "/index.html",
+    "main.6ba58c6b.css.map": "/static/css/main.6ba58c6b.css.map",
+    "main.700c4773.js.map": "/static/js/main.700c4773.js.map",
+    "787.40f4cb11.chunk.js.map": "/static/js/787.40f4cb11.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ba58c6b.css",
+    "static/js/main.700c4773.js"
+  ]
+}

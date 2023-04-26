@@ -1,0 +1,436 @@
+@import url(https://fonts.googleapis.com/css2?family=Creepster&display=swap);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    overflow-x: hidden
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+#app {
+    flex-direction: column
+}
+
+#app, #navbar {
+    background-color: #252525
+}
+
+#navbar {
+    box-shadow: 0 0 5px 4px #252525;
+    height: 50px;
+    justify-content: space-between;
+    padding: 0 64px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 3
+}
+
+#navbar #logo {
+    cursor: pointer;
+    height: auto;
+    width: 45px;
+    z-index: 2
+}
+
+#navbar #menu {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 150px
+}
+
+#navbar #menu .menu-item {
+    color: #fff;
+    cursor: pointer;
+    font-family: Creepster;
+    font-size: 1.2em;
+    transition: .5s
+}
+
+#navbar #menu .menu-item:hover {
+    text-shadow: #c0df40 5px 5px 5px
+}
+
+#home {
+    background-image: url(../../static/media/background.77b388a323faf560168e.webp);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: row;
+    height: calc(100vh - 50px);
+    justify-content: start;
+    width: 100vw
+}
+
+#home, #home #description {
+    align-items: center;
+    display: flex
+}
+
+#home #description {
+    flex-direction: column;
+    font-family: Creepster;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    width: 40%
+}
+
+#home #description h1 {
+    color: #65ef38;
+    font-size: 4em;
+    text-shadow: #a0ee85 1px 1px 5px
+}
+
+#home #description p {
+    color: gray;
+    font-size: 1.5em
+}
+
+.content {
+    grid-gap: 32px;
+    background-color: #252525;
+    display: grid;
+    grid-template-columns: repeat(3, 26.6666666667%);
+    height: auto;
+    min-height: calc(100vh - 50px);
+    padding: 64px;
+    place-items: center;
+    width: 100%
+}
+
+.card {
+    align-items: start;
+    background-color: #313030;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .329);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: 1s
+}
+
+.card, .card img {
+    height: auto;
+    width: 100%
+}
+
+.card .card-info {
+    font-family: Creepster;
+    padding: 16px
+}
+
+.card .card-info h2 {
+    color: #40b5cb;
+    font-size: 1.5em
+}
+
+.card .card-info p {
+    color: #fff7c9;
+    font-size: 1em
+}
+
+.card .card-info span {
+    color: gray
+}
+
+.card:hover {
+    -webkit-transform: scale(110%);
+    transform: scale(110%);
+    transition: .5s;
+    z-index: 2
+}
+
+#box-filter {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    width: 100%
+}
+
+#box-filter input[type=text] {
+    background-color: initial;
+    border: 2px solid gray;
+    border-radius: 50px;
+    color: gray;
+    font-family: Arial;
+    height: 25px;
+    margin-right: 15px;
+    outline: none;
+    padding-left: 10px;
+    width: 300px
+}
+
+#box-filter input[type=text]:focus {
+    box-shadow: 0 1px 5px 0 gray
+}
+
+#box-filter .box-filter-div-check {
+    align-items: center;
+    color: gray;
+    display: flex;
+    flex-direction: row;
+    font-family: Creepster;
+    height: auto;
+    justify-content: space-between;
+    margin-top: 15px;
+    width: 450px
+}
+
+#box-filter label {
+    color: #fff7c9;
+    margin-right: 5px
+}
+
+#box-filter #label-alive {
+    color: #c0df40 !important
+}
+
+#box-filter #label-dead {
+    color: #a1140a
+}
+
+#box-filter #label-female {
+    color: pink
+}
+
+#box-filter #label-male {
+    color: #7f85d8
+}
+
+#box-filter button {
+    background-color: initial;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: Creepster;
+    font-size: 1em
+}
+
+#box-filter #button-reset {
+    margin-top: 15px
+}
+
+#box-filter button:hover {
+    text-shadow: #c0df40 5px 5px 5px
+}
+
+.btn-pass {
+    background-color: initial;
+    border: none;
+    bottom: 0;
+    height: 50px;
+    margin: auto 0;
+    position: fixed;
+    top: 0;
+    width: 50px
+}
+
+.btn-pass .btn-pass-icon {
+    color: #fff;
+    cursor: pointer;
+    font-size: 32px;
+    transition: 1s
+}
+
+.btn-pass .btn-pass-icon:hover {
+    -webkit-transform: scale(120%);
+    transform: scale(120%);
+    transition: .5s
+}
+
+#btn-pass-left {
+    left: 15px
+}
+
+#btn-pass-right {
+    right: 15px
+}
+
+#not-found {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/span 3;
+    height: auto;
+    justify-content: center;
+    width: 100%
+}
+
+#not-found #not-found-img {
+    width: 30%
+}
+
+#not-found #not-found-description {
+    color: gray;
+    font-family: Creepster;
+    font-size: 150%
+}
+
+@-webkit-keyframes animar-personagens {
+    0% {
+        left: -40%
+    }
+
+    to {
+        left: 110%
+    }
+}
+
+@keyframes animar-personagens {
+    0% {
+        left: -40%
+    }
+
+    to {
+        left: 110%
+    }
+}
+
+@media (max-width:800px) {
+    #home {
+        align-items: start;
+        display: flex;
+        flex-direction: row;
+        justify-content: start
+    }
+
+    #description {
+        height: 40% !important;
+        width: 100% !important
+    }
+
+    .content {
+        grid-template-columns: repeat(2, 40%)
+    }
+}
+
+@media (max-width:550px) {
+    #navbar {
+        padding: 32px
+    }
+
+    .content {
+        grid-template-columns: 80%
+    }
+
+    #home {
+        background-position-y: 40%;
+        background-size: contain
+    }
+
+    #description h1 {
+        font-size: 3.5em !important
+    }
+
+    #box-filter {
+        height: 400px;
+        width: 100%
+    }
+
+    #box-filter input[type=text] {
+        margin-bottom: 10px;
+        margin-right: 0;
+        width: 100%
+    }
+
+    #box-filter .box-filter-div-input {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 10px
+    }
+
+    #box-filter .box-filter-div-check {
+        align-items: center;
+        color: gray;
+        display: flex;
+        flex-direction: column;
+        font-family: Creepster;
+        height: auto;
+        justify-content: space-between;
+        margin-top: 15px;
+        width: 100%
+    }
+
+    #box-filter #button-reset {
+        margin-top: 25px
+    }
+}
+
+.App {
+    text-align: center
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none
+}
+
+@media (prefers-reduced-motion:no-preference) {
+    .App-logo {
+        -webkit-animation: App-logo-spin 20s linear infinite;
+        animation: App-logo-spin 20s linear infinite
+    }
+}
+
+.App-header {
+    align-items: center;
+    background-color: #282c34;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: calc(10px + 2vmin);
+    justify-content: center;
+    min-height: 100vh
+}
+
+.App-link {
+    color: #61dafb
+}
+
+@-webkit-keyframes App-logo-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes App-logo-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+/*# sourceMappingURL=main.6ba58c6b.css.map*/
