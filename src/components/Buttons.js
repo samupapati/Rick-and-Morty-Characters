@@ -1,6 +1,7 @@
-import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai"
+import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
+import { numberPages } from './states'
 
-function Buttons({handlePage, counter, nPages}){
+function Buttons({handlePage, counter}){
     return (
         <>
             {counter === 1 
@@ -9,7 +10,7 @@ function Buttons({handlePage, counter, nPages}){
             :
                 <button className="btn-pass" id="btn-pass-left"  onClick={() => handlePage('left')}><AiFillCaretLeft className="btn-pass-icon"/></button>
             }
-            {counter === nPages 
+            {counter === numberPages()
             ? 
                 ''
             :
