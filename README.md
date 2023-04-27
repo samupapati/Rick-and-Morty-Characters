@@ -1,7 +1,7 @@
 <h2>Rick and Morty Characters<h2>
 
 <img align="left" src="https://github.com/samupapati/Rick-and-Morty-Characters/blob/master/home.png"/>
-<p>Projeto que consumi a <a href="https://rickandmortyapi.com/">API do Rick and Morty</a> para exibir os personagens e as informações na página.</p>
+Projeto que consumi a <a href="https://rickandmortyapi.com/">API do Rick and Morty</a> para exibir os personagens e as informações na página.
 <hr>
 <a href="https://samupapati.github.io/Rick-and-Morty-Characters/build/index.html" target="blank">Visitar</a>
 
